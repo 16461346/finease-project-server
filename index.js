@@ -89,33 +89,33 @@ async function run() {
     });
 
     // GET reports by email
-    app.get("/report-page", middleware, async (req, res) => {
-      const email = req.query.email;
-      if (!email) return res.status(400).json({ error: "Email is required" });
+    // app.get("/report-page", middleware, async (req, res) => {
+    //   const email = req.query.email;
+    //   if (!email) return res.status(400).json({ error: "Email is required" });
 
-      try {
-        const userReports = await transaction.find({ email }).toArray();
-        res.json(userReports);
-      } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Server Error" });
-      }
-    });
+    //   try {
+    //     const userReports = await transaction.find({ email }).toArray();
+    //     res.json(userReports);
+    //   } catch (err) {
+    //     console.error(err);
+    //     res.status(500).json({ error: "Server Error" });
+    //   }
+    // });
 
-    app.get("/transactions", middleware, async (req, res) => {
-      const result = await transaction.find().sort({ date: -1 }).toArray();
-      res.send(result);
-    });
+    // app.get("/transactions", middleware, async (req, res) => {
+    //   const result = await transaction.find().sort({ date: -1 }).toArray();
+    //   res.send(result);
+    // });
 
-    app.get("/transactions/:id", middleware, async (req, res) => {
-      const { id } = req.params;
-      const objectId = new ObjectId(id);
-      const result = await transaction.findOne({ _id: objectId });
+    // app.get("/transactions/:id", middleware, async (req, res) => {
+    //   const { id } = req.params;
+    //   const objectId = new ObjectId(id);
+    //   const result = await transaction.findOne({ _id: objectId });
 
-      res.send({
-        result,
-      });
-    });
+    //   res.send({
+    //     result,
+    //   });
+    // });
 
     app.put("/transactions/:id", middleware, async (req, res) => {
       const { id } = req.params;
