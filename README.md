@@ -1,18 +1,18 @@
-# 🚀 FinEase Backend Server
+🚀 FinEase Backend Server
 
-এই প্রজেক্টটি একটি সম্পূর্ণ Node.js / Express ভিত্তিক সার্ভার যেখানে  
-Firebase Admin SDK দিয়ে Authentication verify করা হয়েছে  
-এবং MongoDB ব্যবহার করা হয়েছে ডাটাবেজ হিসেবে।
+This project is a complete Node.js / Express-based backend server,
+where authentication is verified using Firebase Admin SDK,
+and MongoDB is used as the database.
 
----
 
-## 🔥 Features
 
-- Firebase Admin SDK দিয়ে **JWT verification**  
-- User ভিত্তিক secure API routes  
-- MongoDB Database Connection  
-- Environment Variable (.env) Support  
-- Global Middleware Protection  
-- CRUD API Endpoints  
-- Error Handling  
-- CORS Enabled
+🔥 Features
+
+1.JWT verification using Firebase Admin SDK
+2.Secure API routes for users
+3.MongoDB database connection
+4.Environment variable (.env) support
+5.Global middleware protection
+6.CRUD API endpoints
+7.Error handling
+8.CORS enabled
