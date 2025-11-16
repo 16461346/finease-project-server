@@ -58,20 +58,20 @@ async function run() {
     });
 
     //user post
-    // app.post("/users", async (req, res) => {
-    //   const newUser = req.body;
+    app.post("/users", async (req, res) => {
+      const newUser = req.body;
 
-    //   const email = req.body.email;
-    //   const query = { email: email };
-    //   const existionUser = await users.findOne(query);
+      const email = req.body.email;
+      const query = { email: email };
+      const existionUser = await users.findOne(query);
 
-    //   if (existionUser) {
-    //     res.send({ message: "user already exist" });
-    //   } else {
-    //     const result = await users.insertOne(newUser);
-    //     res.send(result);
-    //   }
-    // });
+      if (existionUser) {
+        res.send({ message: "user already exist" });
+      } else {
+        const result = await users.insertOne(newUser);
+        res.send(result);
+      }
+    });
 
     //user update
     app.put("/update-user", async (req, res) => {
