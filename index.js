@@ -25,24 +25,24 @@ const client = new MongoClient(uri, {
 });
 
 //middleware start here
-// const middleware = async (req, res, next) => {
-//   const authorization = req.headers.authorization;
+const middleware = async (req, res, next) => {
+  const authorization = req.headers.authorization;
 
-//   if (!authorization) {
-//     return res.status(401).send({ message: "unauthorized access" });
-//   }
+  if (!authorization) {
+    return res.status(401).send({ message: "unauthorized access" });
+  }
 
-//   const Token = authorization.split(" ")[1];
+  const Token = authorization.split(" ")[1];
 
-//   try {
-//     await admin.auth().verifyIdToken(Token);
-//     next();
-//   } catch (error) {
-//     res.status(401).send({
-//       message: "unauthorized access",
-//     });
-//   }
-// };
+  try {
+    await admin.auth().verifyIdToken(Token);
+    next();
+  } catch (error) {
+    res.status(401).send({
+      message: "unauthorized access",
+    });
+  }
+};
 //middleware end here
 
 async function run() {
