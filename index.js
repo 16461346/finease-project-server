@@ -176,6 +176,3 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-// https://github.com/16461346/FinEase-A10-Server.git
-// https://github.com/16461346/FinBase-A10.git
